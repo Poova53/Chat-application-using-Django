@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div class="contain">
+  <div class="friends_list">
+    <h4>Friends</h4>
+    <ul id="friends_list"></ul>
+  </div>
+
+  <div class="chat_section" id="chat_section">
+    <div class="start_chat">Click On One of your Friends to See Chats</div>
+  </div>
+  <div class="message_form">
+    <div>
+      {% csrf_token %}
+      <div class="message_container">
+        <textarea
+          class="message_input"
+          id="message"
+          rows="3"
+          cols="125"
+          placeholder="type something..."
+        ></textarea>
+        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="friend_requests">
+    <div>
+      <h4>Friend Requests</h4>
+      <ul id="request_list"></ul>
+    </div>
+    <div>
+      <h4>Suggestions</h4>
+      <ul>
+        {% if suggestion_list %} {% for suggest in suggestion_list %}
+        <li class="suggest" id="{{suggest.username}}request">
+          <div class="info">
+            <div class="name"><strong>{{suggest.username}}</strong></div>
+            <button
+              class="send_request {{suggest.username}}request"
+              onclick="sendRequest(event)"
+            >
+              send request
+            </button>
+          </div>
+          <div class="profile_img">
+            <img
+              src="{% get_media_prefix %}{{suggest.picture}}"
+              alt="picture"
+            />
+          </div>
+        </li>
+        {% endfor %} {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/home.js' %}"></script>
+
+{% endblock %}

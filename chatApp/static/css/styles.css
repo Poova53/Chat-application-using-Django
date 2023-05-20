@@ -1,0 +1,183 @@
+.contain {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.friends_list {
+  position: fixed;
+  width: 250px;
+  left: 0;
+  bottom: 0;
+  top: 60px;
+  background-color: burlywood;
+  overflow: auto;
+}
+
+.friends_list ul,
+.friend_requests ul {
+  list-style: none;
+  padding: 10px 2px 0;
+}
+
+.friend {
+  border: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.friend,
+.request,
+.suggest {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+
+.friend img,
+.request img,
+.suggest img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.chat_section {
+  width: 66vw;
+  height: 95vh;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chat_section .friend_name {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 30px;
+  height: 70px;
+  width: 68%;
+  margin-bottom: 10px;
+  background-color: rgb(113, 182, 9);
+  position: fixed;
+}
+
+.chat_body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.right_send {
+  align-self: flex-end;
+  background-color: darkslateblue;
+  text-align: end;
+}
+
+.left_recieve {
+  align-self: flex-start;
+  background-color: darkkhaki;
+}
+
+.right_send,
+.left_recieve {
+  width: 60%;
+  margin-bottom: 15px;
+  font-size: medium;
+  color: whitesmoke;
+  padding: 10px 20px;
+}
+
+.chat_section form {
+  display: flex;
+}
+
+.message_container {
+  position: fixed;
+  bottom: 0;
+  background-color: brown;
+  width: 66.8%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.start_chat {
+  align-self: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.message_form {
+  margin-left: 250px;
+  display: none;
+}
+
+.friend_requests {
+  position: fixed;
+  width: 255px;
+  right: 0;
+  bottom: 0;
+  top: 60px;
+  background-color: chocolate;
+  display: flex;
+  flex-direction: column;
+}
+
+.friend_requests div {
+  height: 50%;
+  padding: 0 2px;
+}
+
+.friend_requests h4 {
+  text-align: center;
+}
+
+.friend_requests ul {
+  height: 90%;
+  overflow: auto;
+}
+
+.request .info {
+  width: 70%;
+}
+
+.request .name {
+  text-align: center;
+}
+
+.request .action {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action span {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.action .accept {
+  color: green;
+}
+
+.action .reject {
+  color: red;
+}
+
+.accept:hover,
+.reject:hover {
+  opacity: 1;
+}
+
+.suggest .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
